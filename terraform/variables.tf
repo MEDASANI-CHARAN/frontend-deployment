@@ -19,3 +19,7 @@ variable common_tags {
 variable zone_name {
   default = "daws78s.xyz"
 }
+
+variable app_version {
+  
+}

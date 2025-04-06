@@ -31,7 +31,7 @@ resource "null_resource" "frontend" {
 
    provisioner "file" {
       source      = "frontend.sh"
-      destination = "/tmp/frontend.sh"
+      destination = "/tmp/frontend.sh ${var.app_version}"
   }
 
   # provisioner "file" {
