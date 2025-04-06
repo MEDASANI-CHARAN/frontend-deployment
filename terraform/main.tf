@@ -31,7 +31,7 @@ resource "null_resource" "frontend" {
 
    provisioner "file" {
       source      = "frontend.sh"
-      destination = "/tmp/frontend.sh ${var.app_version}"
+      destination = "/tmp/frontend.sh"
   }
 
   # provisioner "file" {
@@ -42,7 +42,7 @@ resource "null_resource" "frontend" {
      provisioner "remote-exec" {
       inline = [
           "chmod +x /tmp/frontend.sh",
-          "sudo sh /tmp/frontend.sh"
+          "sudo sh /tmp/frontend.sh  ${var.app_version}"
         ]
     }
 }
